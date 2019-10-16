@@ -11,4 +11,5 @@ package NimPackage;
  */
 public interface Nim {
     
+    void play();
 }
