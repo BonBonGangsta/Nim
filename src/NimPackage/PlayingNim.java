@@ -7,11 +7,11 @@ package NimPackage;
 
 /**
  *
- * @author bydepa
+ * @author byrondepaz
  */
-public interface Player {
-    
-    void move(Pile pile);
-    
-    void playerName(String name);
+public class PlayingNim {
+    public static void main(String [] args)
+    {
+        
+    }
 }
