@@ -9,7 +9,7 @@ package NimPackage;
  *
  * @author bydepa
  */
-public interface Nim {
+public class Nim {
     
-    void play();
+    
 }

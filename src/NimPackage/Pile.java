@@ -1,31 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package NimPackage;
 
 /**
- *
- * @author byrondepaz
+ * Pile is a pile of marbles, who's whole purpose in life is to keep track of
+ * how many marbles are left and to remove marbles.
  */
 public class Pile {
-    private int totalMarbles;
-    private int maxRemoval;
+    private int totalMarbles; // total number of marbles in the pile
     
-    public Pile()
-    {
-        this.totalMarbles = 100;
-        
-    }
-    
+    /**
+     * Create a pile of Marbles with an initial amount.
+     * @param marbles initial amount of marbles to be used.
+     */
     public Pile(int marbles)
     {
-        this.totalMarbles = marbles;
+        totalMarbles = marbles;
     }
     
-    private void setMaxRemoval ()
+    /**
+     * return the number of marbles left in the pile.
+     * @return number of marbles left in the pile.
+     */
+    public int numMarbles()
     {
-        this.maxRemoval = Math.floorDiv(totalMarbles, 2);
+        return totalMarbles;
+    }
+    
+    /**
+     * Remove a certain amount of marbles from the pile.
+     * @param numToRemove number of marbles to be removed.
+     */
+    public void removeMarbles(int numToRemove)
+    {
+        totalMarbles -= numToRemove;
     }
 }

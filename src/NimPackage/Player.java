@@ -11,7 +11,7 @@ package NimPackage;
  */
 public interface Player {
     
-    void move(Pile pile);
+    void move(int pile);
     
-    void playerName(String name);
+    String playerName();
 }

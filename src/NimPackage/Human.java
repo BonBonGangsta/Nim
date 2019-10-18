@@ -10,22 +10,16 @@ package NimPackage;
  * @author byrondepaz
  */
 public class Human implements Player {
-    private String name;
+    private String name = "human";
     private int marblesTaken;
     
     public void move(int pile)
     {
         
     }
-    
 
-    @Override
-    public void move(Pile pile) {
-        
-    }
-
-    @Override
-    public void playerName(String name) {
-        this.name = name ;
+    public String playerName() 
+    {
+        return name;
     }
 }
