@@ -11,6 +11,7 @@ package NimPackage;
  */
 public class Human implements Player {
     private String name;
+    private String name = "human";
     private int marblesTaken;
     
     public Human(String name)
@@ -28,5 +29,9 @@ public class Human implements Player {
     @Override
     public String playerName(String name) {
         return this.name;
+    public String playerName() 
+    {
+        return name;
+>>>>>>> 6011e8f0833b17f02afc1345cd1e9e3a522db9eb
     }
 }

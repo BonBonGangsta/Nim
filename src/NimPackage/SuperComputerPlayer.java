@@ -7,11 +7,12 @@ package NimPackage;
 
 /**
  *
- * @author byrondepaz
+ * @author bydepa
  */
-public class PlayingNim {
-    public static void main(String [] args)
-    {
-        
-    }
+public class SuperComputerPlayer {
+    private String name = "N00BSLAYER";
+    private int marblesTaken;
+    
+    
+    
 }
