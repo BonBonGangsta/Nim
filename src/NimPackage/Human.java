@@ -13,19 +13,20 @@ public class Human implements Player {
     private String name;
     private int marblesTaken;
     
-    public void move(int pile)
+    public Human(String name)
     {
-        
+        this.name = name;
     }
     
 
     @Override
-    public void move(Pile pile) {
+    public int move(Pile pile) {
         
+        return 0;
     }
 
     @Override
-    public void playerName(String name) {
-        this.name = name ;
+    public String playerName(String name) {
+        return this.name;
     }
 }
