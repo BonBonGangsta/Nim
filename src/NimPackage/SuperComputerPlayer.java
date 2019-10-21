@@ -32,6 +32,7 @@ public class SuperComputerPlayer implements Player {
     {
         int marbles;
         boolean matchFound = false;
+        int lastKey = 1 ;
         if (pile != 2)
         {
             while(!matchFound)
@@ -41,14 +42,15 @@ public class SuperComputerPlayer implements Player {
                 if (keyValue >= pile)
                 {
                     matchFound = true;
+                    lastKey = key.get(i-1);
                 }
-                int lastKey = keyValue;
+                i++;
+            }
                 marbles = pile - lastKey ;
                 marblesTaken += marbles ;
                 return marbles;
-            }
         }
-        marblesTaken += 1;
+        marblesTaken += lastKey;
         return 1;
     }
     
