@@ -13,6 +13,10 @@ public class Human implements Player {
     private String name;
     private int marblesTaken;
     
+    public Human(){
+        this.name = "John Doe" ;
+    }
+    
     public Human(String name)
     {
         this.name = name;
@@ -31,7 +35,7 @@ public class Human implements Player {
             maxRemoval = (int) pile / 2 ;
             return maxRemoval ;
         }
-        return 0;
+        return 1;
     }
     
     public void addToMarbles(int marbles)
