@@ -52,37 +52,58 @@ public class SuperComputerPlayer implements Player {
      */
     public int move(int pile)
     {
-        int marbles;
-        boolean matchFound = false;
-        int lastKey = 1 ;
+        int marbles = 1; // marbles that will be taken at the end.
+        boolean matchFound = false; // switch to leave loop
+        int lastKey = 1 ; // last key will be set to 1 for when the pile is 2.
         if (pile != 2)
         {
+            // if the pile is not 2 and the match is false
             while(!matchFound)
             {
+                // start at the first index
                 int i = 0;
+                // set the keyValue to the int in the index.
                 int keyValue = this.key.get(i);
+                // test to see if the keyValue is greater than the #
+                // of objects in the pile
                 if (keyValue >= pile)
                 {
+                    // if true, then assign the value in the previous index
                     matchFound = true;
                     lastKey = key.get(i-1);
                 }
-                i++;
+                i++; // increment the index to test again.
             }
+            // The number of marbles to take is the difference between
+            // the # in the pile and the key value.
+            // Note: the goal is to have the remaining pile be a value
+            // that is 2 to the nth power minus 1.
                 marbles = pile - lastKey ;
+                // add to the total number of piles.
                 marblesTaken += marbles ;
                 return marbles;
         }
-        marblesTaken += lastKey;
-        return 1;
+        // if the pile is 2, remove one marble and return the move as a 1.
+        marblesTaken += marbles;
+        return marbles;
     }
     
+    /**
+     * return the string with the number.
+     * @return  name of the player.
+     */
     public String playerName()
     {
       return name;  
     }
     
+    /**
+     * Fill the array with values of 2 to the nth power minus 1.
+     * @param upperLimit 
+     */
     private void generateKey(int upperLimit)
     {
+        // switch to escape the for loop
         boolean meetKey = false;
         
         for(int i=0; !meetKey; i++)
