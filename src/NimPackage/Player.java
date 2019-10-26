@@ -10,4 +10,5 @@ public interface Player {
     int move(int pile);
     
     String playerName();
+    
 }

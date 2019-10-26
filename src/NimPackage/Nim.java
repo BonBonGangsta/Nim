@@ -103,4 +103,9 @@ public class Nim {
         }
 
     }
+    
+    public static void GetPlayer(Player player)
+    {
+        
+    }
 }

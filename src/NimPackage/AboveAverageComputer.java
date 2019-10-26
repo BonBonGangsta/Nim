@@ -71,5 +71,4 @@ public class AboveAverageComputer implements Player {
         return name;
     }
     
-    
 }
