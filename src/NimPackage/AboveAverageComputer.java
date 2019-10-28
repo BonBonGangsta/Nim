@@ -14,7 +14,7 @@ import java.util.Random;
 public class AboveAverageComputer implements Player {
     private String name ; // name of the AboveAverageComputer player.
     private int marblesTaken ; // total number of marbles taken.
-    
+    private final String race = "AAC"; //AboveAverageComputer Race
     /**
      * creates an AboveAverageComputer player with a default name of 
      * "Hal 9000".
@@ -71,4 +71,7 @@ public class AboveAverageComputer implements Player {
         return name;
     }
     
+    public String getRace(){
+        return race ;
+    }
 }

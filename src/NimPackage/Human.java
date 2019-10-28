@@ -10,7 +10,7 @@ package NimPackage;
 public class Human implements Player {
     private String name; // name of player
     private int marblesTaken; // total number of marbles taken in a game
-    
+    private final String race = "HUM"; // the best race, the human race
     /**
      * creates a human player with a default name of John Doe.
      */
@@ -56,11 +56,16 @@ public class Human implements Player {
         return maxRemoval; // the maximum removal of a pile of 2 is 1.
     }
     
+    public String getRace()
+    {
+        return race;
+    }
+    
     /**
      * Add the number objects passed , to the counter.
      * @param marbles number of objects in the pile chosen to remove.
      */
-    public void addToMarbles(int marbles)
+    private void addToMarbles(int marbles)
     {
         marblesTaken += marbles ;
     }

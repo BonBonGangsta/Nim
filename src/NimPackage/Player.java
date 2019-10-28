@@ -11,4 +11,5 @@ public interface Player {
     
     String playerName();
     
+    String getRace();
 }

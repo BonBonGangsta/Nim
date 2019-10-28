@@ -10,6 +10,7 @@ public class SuperComputerPlayer implements Player {
     private String name ; // string of name.
     private int marblesTaken ; // total number of objects taken from the pile.
     private ArrayList<Integer> key; // Array list of key answers.
+    private final String race = "SCP"; // SuperComputer Race
     
     /**
      * Creates a supercomputer player with the best default name, then 
@@ -95,6 +96,11 @@ public class SuperComputerPlayer implements Player {
     public String playerName()
     {
       return name;  
+    }
+    
+    public String getRace()
+    {
+        return race;
     }
     
     /**
