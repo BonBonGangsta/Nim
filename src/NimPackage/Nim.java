@@ -4,10 +4,6 @@
  * and open the template in the editor.
  */
 package NimPackage;
-
-import java.util.Scanner;
-import javax.swing.JOptionPane;
-import java.io.IOException;
 import java.util.Random;
 
 /**
@@ -16,12 +12,13 @@ import java.util.Random;
  */
 public class Nim {
     
-    private Player playerJuan;
-    private Player playerDos;
-    private Pile gamePile;
-    private int pileMarbles;
-    private final int LOWERLIMIT = 10;
-    private final int UPPERLIMIT = 100;
+    private Player playerJuan; // the first player
+    private Player playerDos; // the second player
+    private Pile gamePile; // pile of objects the game has
+    private int pileMarbles; // number of objects in the pile
+    private final int LOWERLIMIT = 10; // min number of objects needed to play
+    private final int UPPERLIMIT = 100; // max ''   ''  ''  ''  ''  ''
+    
     
     public void startGame(){
         Random pileGenerator = new Random();
@@ -47,6 +44,14 @@ public class Nim {
     public void secondplayer(Player player2)
     {
         this.playerDos = player2;
+    }
+    
+    public String p1Move(int statMove)
+    {
+        if (this.isValid(statMove))
+        {
+            playerJuan.move(statMove)
+        }
     }
    
 }
