@@ -1,9 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * i certify that this is my original work
+ * Byron De Paz PID 3999061
  */
-
 package NimPackage;
 import java.util.Random;
 
@@ -43,13 +41,13 @@ public class AboveAverageComputer implements Player {
     {
         int marbles = 1; // mimnum number of objects that can be removed.
         // if the pile is 2 just return 1 and win the game.
-        if (pile != 2)
+        if (pile > 3)
         {
             // create a random number generator called answer.
             Random answer = new Random();
             // generate the upper bound of for the random # number which is
             // half of the number in the pile.
-            int maxRemoval = (int) Math.floor((pile / 2)) ;
+            int maxRemoval = (int) (pile / 2) ;
             // the minimum is 1 and half the pile.
             marbles = answer.nextInt(maxRemoval - 1) + 1 ;
             // add the number generated to the number to the number
@@ -71,7 +69,30 @@ public class AboveAverageComputer implements Player {
         return name;
     }
     
+    /**
+     * return the race of the Player.
+     * @return "AAC" for AboveAverageComputer.
+     */
     public String getRace(){
         return race ;
+    }
+    
+    /**
+     * return the total number of Objects taken.
+     * @return total number of objects.
+     */
+    public int objectsTaken()
+    {
+        return marblesTaken;
+    }
+    
+    /**
+     * add onto the number of objects taken. this is will be used when the 
+     * player is the loser as they are forced to take the last object in Nim.
+     * @param x 
+     */
+    public void addToObjects (int x)
+    {
+        marblesTaken += x;
     }
 }

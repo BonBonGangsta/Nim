@@ -1,4 +1,6 @@
 /*
+ * i certify that this is my original work
+ * Byron De Paz PID 3999061
  */
 package NimPackage;
 import java.util.ArrayList;
@@ -56,26 +58,22 @@ public class SuperComputerPlayer implements Player {
         int marbles = 1; // marbles that will be taken at the end.
         boolean matchFound = false; // switch to leave loop
         int lastKey = 1 ; // last key will be set to 1 for when the pile is 2.
-        if (pile != 2)
+        if (pile > 2)
         {
-            // if the pile is not 2 and the match is false
-            while(!matchFound)
-            {
-                // start at the first index
-                int i = 0;
-                // set the keyValue to the int in the index.
-                int keyValue = this.key.get(i);
-                // test to see if the keyValue is greater than the #
-                // of objects in the pile
-                if (keyValue >= pile)
+            // if the pile is not 3, 2, or 1 and the match is false
+            // start at the first index
+                for(int i = 0; i < key.size() && !matchFound; i++)
                 {
-                    // if true, then assign the value in the previous index
-                    matchFound = true;
-                    lastKey = key.get(i-1);
+                   int keyValue = key.get(i);
+                
+                    if (keyValue >= pile)
+                    {
+                        // if true, then assign the value in the previous index
+                        matchFound = true;
+                        lastKey = key.get(i-1);
+                    }
                 }
-                i++; // increment the index to test again.
-            }
-            // The number of marbles to take is the difference between
+                // The number of marbles to take is the difference between
             // the # in the pile and the key value.
             // Note: the goal is to have the remaining pile be a value
             // that is 2 to the nth power minus 1.
@@ -83,7 +81,7 @@ public class SuperComputerPlayer implements Player {
                 // add to the total number of piles.
                 marblesTaken += marbles ;
                 return marbles;
-        }
+            }
         // if the pile is 2, remove one marble and return the move as a 1.
         marblesTaken += marbles;
         return marbles;
@@ -98,6 +96,10 @@ public class SuperComputerPlayer implements Player {
       return name;  
     }
     
+    /**
+     * return the race of the Player
+     * @return "SCP" for SuperComputerPlayer
+     */
     public String getRace()
     {
         return race;
@@ -105,21 +107,44 @@ public class SuperComputerPlayer implements Player {
     
     /**
      * Fill the array with values of 2 to the nth power minus 1.
-     * @param upperLimit 
+     * @param upperLimit is the number of objects in the original pile.
      */
     private void generateKey(int upperLimit)
     {
         // switch to escape the for loop
         boolean meetKey = false;
-        
+        // loop until a value of 2^n - 1 is found that is higher than the
+        // upperlimit
         for(int i=0; !meetKey; i++)
         {
+            // assignt the key value to 2^i - 1
             int keyValue = (int)(Math.pow(2,i)) - 1 ;
-            key.add(keyValue);
+            key.add(keyValue); // add it to the array
+            // check if it's higher than the upper limit
             if(keyValue >= upperLimit)
             {
+                // if it is, the condition is met and the loop will term.
                 meetKey = true ;
             }
         }
+    }
+    
+    /**
+     * return the total number of Objects taken.
+     * @return total number of Objects taken throughout a game.
+     */
+    public int objectsTaken()
+    {
+        return marblesTaken;
+    }
+    
+    /**
+     * add onto the number of objects taken. this is will be used when the 
+     * player is the loser as they are forced to take the last object in Nim.
+     * @param x 
+     */
+    public void addToObjects (int x)
+    {
+        marblesTaken += x;
     }
 }
