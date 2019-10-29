@@ -4,7 +4,11 @@
  */
 package NimPackage;
 import java.util.Random;
-
+/**
+ * creates a game of Nim, which is a 2 player game where the player to pick up
+ * the last object in a Pile loses.
+ * @author byrondepaz
+ */
 public class Nim {
     private Player firstPlayer; // Who's on first
     private Player secondPlayer; // what's on second
