@@ -43,17 +43,10 @@ public class Human implements Player {
      * @param pile number of objects left in the pile.
      * @return maximum number that can be removed which is #left / 2.
      */
-    public int move(int pile)
+    public int move(int move)
     {
-        int maxRemoval = 1; // creates an int for the max # but with the min.
-        // if the pile is 2, you can only remove 1 from the pile and win.
-        if (pile != 2)
-        {
-            // if not 2, then the max removal can only be half of the pile.
-            maxRemoval = (int) pile / 2 ;
-            return maxRemoval ; // return the maximum
-        }
-        return maxRemoval; // the maximum removal of a pile of 2 is 1.
+        addToMarbles(move);
+        return move;
     }
     
     public String getRace()
