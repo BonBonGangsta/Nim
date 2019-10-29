@@ -49,7 +49,7 @@ public class AboveAverageComputer implements Player {
             Random answer = new Random();
             // generate the upper bound of for the random # number which is
             // half of the number in the pile.
-            int maxRemoval = (int) pile / 2 ;
+            int maxRemoval = (int) Math.floor((pile / 2)) ;
             // the minimum is 1 and half the pile.
             marbles = answer.nextInt(maxRemoval - 1) + 1 ;
             // add the number generated to the number to the number
