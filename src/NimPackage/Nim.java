@@ -19,7 +19,6 @@ public class Nim {
     private int pileMarbles; // number of objects in the pile
     private final int LOWERLIMIT = 10; // min number of objects needed to play
     private final int UPPERLIMIT = 100; // max ''   ''  ''  ''  ''  ''
-    private int maxRemoval;
     
     /**
      * start the game of Nim, by creating a Pile with a random initial number
@@ -31,9 +30,7 @@ public class Nim {
         pileMarbles = pileGenerator.nextInt(UPPERLIMIT - LOWERLIMIT)
                    + LOWERLIMIT;
         
-        gamePile = new Pile(pileMarbles);
-        maxRemoval = (int) gamePile.numMarbles() / 2 ;
-        
+        gamePile = new Pile(pileMarbles);     
         return "" + gamePile.numMarbles();
     }
     
